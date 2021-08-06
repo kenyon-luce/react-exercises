@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
+import Lamp from "./Lamp";
+import LightSwitch from "./LightSwitch";
 
 //Components
 const Star = () => React.createElement('div', null, 'This is a little star');
