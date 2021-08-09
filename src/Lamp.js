@@ -17,4 +17,4 @@ const Lamp = ({lampOn, position}) => (
     </Wrapper>
 )
 
-export default Lamp;
+export default Lamp; //activates the object to be called on in App.js
