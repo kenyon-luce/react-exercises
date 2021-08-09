@@ -31,7 +31,7 @@ const App = () => {
     return (
         //the below tags are being used similar to classes in Java
         <Room>
-            {/*the below attributes are called props, which control the properties of that tag*/}
+            {/*the below attributes are called props, which contain the properties of that tag*/}
             <Lamp lampOn={isLampOn} position='left'/>
             <LightSwitch
                 name='one'
