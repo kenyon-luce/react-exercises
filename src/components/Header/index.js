@@ -5,14 +5,14 @@ import React from 'react';
 import RMDBLogo from '../../images/react-movie-logo.svg';
 import TMDBLogo from '../../images/tmdb_logo.svg';
 //STYLES
-import {Wrapper, Content, LogoImg, TMDBLogoImg} from './Header.styles';
+import {Wrapper, Content, LogoImg, TMDBLogoImg, CreditLogo} from './Header.styles';
 //the "{}" lets us import more than one element from the same component
 
 const Header = () => (
     <Wrapper>
         <Content>
             <LogoImg src={RMDBLogo} alt='rmdb-logo'/>
-            <TMDBLogoImg src={TMDBLogoImg} alt='tmdb-logo'/>
+            <CreditLogo src={TMDBLogo} alt='tmdb-logo'/>
         </Content>
     </Wrapper>
 );

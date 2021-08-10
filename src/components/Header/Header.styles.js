@@ -18,6 +18,7 @@ export const Content = styled.div`
 `;
 
 //QUESTION: where does it know what image is what for the below instances?
+//ANSWER: we define the source of the image in index.js (ln 5, 6), and the items below are just tags to style the images it will be wrapping
 export const LogoImg = styled.img`
     width: 200px;
     
@@ -26,7 +27,7 @@ export const LogoImg = styled.img`
         width 150px;
     }
 `;
-export const TMDBLogoImg = styled.img`
+export const CreditLogo = styled.img`
     width: 100px;
     @media screen and (max-width: 500px) {
         width: 80px;
