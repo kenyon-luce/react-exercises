@@ -13,7 +13,7 @@ function App() {
     <div className="App">
         <Header/>
         <Home/>
-      Start here.
+      {/*Start here.*/}
         <GlobalStyle/>
     {/*  ^^^  brought in the styling within the div*/}
     </div>
