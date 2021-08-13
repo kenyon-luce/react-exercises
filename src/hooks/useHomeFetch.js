@@ -1,6 +1,6 @@
 //custom hooks
 //moving logic into here so we can re use it
-import React, {useState, useEffect} from 'react';
+import {useState, useEffect} from 'react';
 
 //importing API
 import API from '../API'
@@ -18,7 +18,7 @@ export const useHomeFetch = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
-    const fetchMovies = async (page, searchTerm = "") => {
+    const fetchMovies = async (page, searchTerm = '') => {
         //async function lets us grab information from our api
         //searchTerm will use a state value but when a search term isn't passed in it will default to an empty string as defined in the parameter
         try{
@@ -26,7 +26,7 @@ export const useHomeFetch = () => {
             setLoading(true);
 
             const movies = await API.fetchMovies(searchTerm, page);
-            console.log(movies);
+            // console.log(movies);
 
             setState(prev => ({ //returning an object
                 ...movies,
@@ -49,3 +49,4 @@ export const useHomeFetch = () => {
 
     return {state, loading, error};
 };
+

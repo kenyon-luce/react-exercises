@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 
 //importing config.js
 import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from "../config";
@@ -14,7 +14,7 @@ import DefaultImage from '../images/no_image.jpg';
 
 const Home = () => {
     //since we a custom hook, we can call on its objects in order to use them
-    const {state,loading, error} = useHomeFetch;
+    const {state,loading, error} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
 
     console.log(state)
     //QUESTION: why does it log the same results array 4 times when logging the state?
