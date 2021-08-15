@@ -8,6 +8,7 @@ import HeroImage from './HeroImage';
 import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
+import SearchBar from "./SearchBar";
 
 //importing custom hook
 import {useHomeFetch} from '../hooks/useHomeFetch';
@@ -42,6 +43,7 @@ const Home = () => {
                 />
                 : null
             }
+            <SearchBar/>
             {/*creating grid to display list of popular movies*/}
             <Grid header={'Popular Movies'}>
                 {state.results.map(movie => (
