@@ -5,6 +5,7 @@ import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from "../config";
 
 //importing components
 import HeroImage from './HeroImage';
+import Grid from './Grid'
 
 //importing custom hook
 import {useHomeFetch} from '../hooks/useHomeFetch';
@@ -39,6 +40,13 @@ const Home = () => {
                 />
                 : null
             }
+            {/*creating grid to display list of popular movies*/}
+            <Grid header={'Popular Movies'}>
+                {state.results.map(movie => (
+                    <div key={movie.id}>{movie.title}</div> //returns movie title from each result
+                    //giving each div a key makes each movie result unique
+                ))}
+            </Grid>
         </>
     )
 }
