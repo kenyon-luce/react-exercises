@@ -18,7 +18,7 @@ import DefaultImage from '../images/no_image.jpg';
 
 const Home = () => {
     //since we a custom hook, we can call on its objects in order to use them
-    const {state,loading, error} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
+    const {state,loading, error, setSearchTerm} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
 
     console.log(state)
     //QUESTION: why does it log the same results array 4 times when logging the state?
@@ -43,7 +43,7 @@ const Home = () => {
                 />
                 : null
             }
-            <SearchBar/>
+            <SearchBar setSearchTerm={setSearchTerm}/> {/*when a term is "set" in here, it will set the search term in our fetch */}
             {/*creating grid to display list of popular movies*/}
             <Grid header={'Popular Movies'}>
                 {state.results.map(movie => (

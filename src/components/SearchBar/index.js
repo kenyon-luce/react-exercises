@@ -4,6 +4,22 @@ import {Wrapper, Content} from './SearchBar.styles';
 
 const SearchBar = ({setSearchTerm}) => {
     const [state, setState] = useState('');
+    const initial = useRef(true);
+
+    useEffect(() => {
+        if (initial.current) { // .current represents the current value of the variable, since it is set true at first it will pass this conditioin and change its value to false
+            initial.current = false;
+            return;
+        }
+        //^skips initial render
+
+        const timer = setTimeout(() => {
+            setSearchTerm(state);
+        }, 500)
+
+        return () => clearTimeout(timer) //stops timer after running, just so it doesn't run forever
+    }, [setSearchTerm, state])
+    //this is a timer that will run our search function 500 milliseconds after typing the search query (search term and state)
 
     return (
         <Wrapper>

@@ -20,6 +20,8 @@ export const useHomeFetch = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
 
+    console.log(searchTerm);
+
     const fetchMovies = async (page, searchTerm = '') => {
         //async function lets us grab information from our api
         //searchTerm will use a state value but when a search term isn't passed in it will default to an empty string as defined in the parameter
@@ -49,6 +51,6 @@ export const useHomeFetch = () => {
     //^^since we didn't define what we are searching for, the first page returns the most popular movies currently (as declared in API.js ln 19-24)
     //*each page can have up to 1000 results
 
-    return {state, loading, error};
+    return {state, loading, error, setSearchTerm};
 };
 
