@@ -9,6 +9,7 @@ import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
 import SearchBar from "./SearchBar";
+import Button from "./Button";
 
 //importing custom hook
 import {useHomeFetch} from '../hooks/useHomeFetch';
@@ -57,7 +58,10 @@ const Home = () => {
                     />
                 ))}
             </Grid>
-            <Spinner/>
+            {loading && <Spinner/>} {/*spinner only appears when pages are loading*/}
+            {state.page < state.total_pages && !loading && ( //button will only appear as long as there are still pages to load
+                <Button text='Load More'/>
+            )}
         </>
     )
 }
