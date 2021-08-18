@@ -44,13 +44,14 @@ export const useHomeFetch = () => {
         //since we had set the loading to true, we have to set it to false when we have grabbed all the movies
         setLoading(false);
     }
-    //initial render (first page)
+    //initial render and search (first page)
     useEffect(() => {
-        fetchMovies(1)
-    }, [])
+        setState(initialState);
+        fetchMovies(1, searchTerm)
+    }, [searchTerm]) //will trigger again each time a search term is passed
     //^^since we didn't define what we are searching for, the first page returns the most popular movies currently (as declared in API.js ln 19-24)
     //*each page can have up to 1000 results
 
-    return {state, loading, error, setSearchTerm};
+    return {state, loading, error, searchTerm, setSearchTerm};
 };
 

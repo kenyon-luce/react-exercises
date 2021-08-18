@@ -18,7 +18,7 @@ import DefaultImage from '../images/no_image.jpg';
 
 const Home = () => {
     //since we a custom hook, we can call on its objects in order to use them
-    const {state,loading, error, setSearchTerm} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
+    const {state,loading, error, searchTerm, setSearchTerm} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
 
     console.log(state)
     //QUESTION: why does it log the same results array 4 times when logging the state?
@@ -34,7 +34,7 @@ const Home = () => {
         //IMPORTANT: you can only return one parent tag at a time, so we will need to wrap everything in one tag. In this case, we are using a fragment (or empty tag) to wrap all our other tags, since we don't want to create a div
         <>
             {/*here it will display the hero image if there are results available, if not it will return null and fall back*/}
-            {state.results[0] ?
+            {!searchTerm && state.results[0] ? //banner movie will only display on initial load, when searching the banner will go away
                 <HeroImage //giving it props using string literal
                     image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
                     title={state.results[0].original_title}
