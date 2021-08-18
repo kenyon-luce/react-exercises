@@ -15,10 +15,10 @@ const initialState = {
 export const useHomeFetch = () => {
 
     const [searchTerm, setSearchTerm] = useState('');
-
     const [state, setState] = useState(initialState); //set default state
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
 
     console.log(searchTerm);
 
@@ -52,6 +52,14 @@ export const useHomeFetch = () => {
     //^^since we didn't define what we are searching for, the first page returns the most popular movies currently (as declared in API.js ln 19-24)
     //*each page can have up to 1000 results
 
-    return {state, loading, error, searchTerm, setSearchTerm};
+    //load more
+    useEffect(() => {
+        if(!isLoadingMore) return;
+
+        fetchMovies(state.page + 1, searchTerm);
+        setIsLoadingMore(false);
+    }, [isLoadingMore, searchTerm, state.page])
+
+    return {state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore};
 };
 

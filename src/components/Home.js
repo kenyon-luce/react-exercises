@@ -19,7 +19,7 @@ import DefaultImage from '../images/no_image.jpg';
 
 const Home = () => {
     //since we a custom hook, we can call on its objects in order to use them
-    const {state,loading, error, searchTerm, setSearchTerm} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
+    const {state,loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
 
     console.log(state)
     //QUESTION: why does it log the same results array 4 times when logging the state?
@@ -31,6 +31,9 @@ const Home = () => {
     // //^^returns first page of movies containing the word ("search") in their title
 
     // return <div>Home Page</div>
+
+    if(error) return <div>Something went wrong ...</div>; //error message
+
     return (
         //IMPORTANT: you can only return one parent tag at a time, so we will need to wrap everything in one tag. In this case, we are using a fragment (or empty tag) to wrap all our other tags, since we don't want to create a div
         <>
@@ -60,7 +63,7 @@ const Home = () => {
             </Grid>
             {loading && <Spinner/>} {/*spinner only appears when pages are loading*/}
             {state.page < state.total_pages && !loading && ( //button will only appear as long as there are still pages to load
-                <Button text='Load More'/>
+                <Button text='Load More' callback={() => setIsLoadingMore(true)}/>
             )}
         </>
     )
