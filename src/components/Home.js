@@ -45,7 +45,7 @@ const Home = () => {
             }
             <SearchBar setSearchTerm={setSearchTerm}/> {/*when a term is "set" in here, it will set the search term in our fetch */}
             {/*creating grid to display list of popular movies*/}
-            <Grid header={'Popular Movies'}>
+            <Grid header={searchTerm ? 'Search Results' : 'Popular Movies'}> {/*we want this title to change when we search something*/}
                 {state.results.map(movie => (
                     // <div key={movie.id}>{movie.title}</div> //returns movie title from each result
                     // //giving each div a key makes each movie result unique
