@@ -20,7 +20,7 @@ export const useHomeFetch = () => {
     const [error, setError] = useState(false);
     const [isLoadingMore, setIsLoadingMore] = useState(false);
 
-    console.log(searchTerm);
+    // console.log(searchTerm);
 
     const fetchMovies = async (page, searchTerm = '') => {
         //async function lets us grab information from our api
@@ -58,7 +58,7 @@ export const useHomeFetch = () => {
 
         fetchMovies(state.page + 1, searchTerm);
         setIsLoadingMore(false);
-    }, [isLoadingMore, searchTerm, state.page])
+    }, [isLoadingMore, searchTerm, state.page]);
 
     return {state, loading, error, searchTerm, setSearchTerm, setIsLoadingMore};
 };

@@ -21,7 +21,9 @@ const Home = () => {
     //since we a custom hook, we can call on its objects in order to use them
     const {state,loading, error, searchTerm, setSearchTerm, setIsLoadingMore} = useHomeFetch(); //IMPORTANT: since useHomeFetch is a function grabbing values from the movie API, we need to include "()"
 
-    console.log(state)
+    console.log(state);
+    console.log(state.page);
+    console.log(state.total_pages);
     //QUESTION: why does it log the same results array 4 times when logging the state?
     //ANSWER: React re renders every time a state is changed. This should not affect the performance of the page as it only displays the most updated information
 
