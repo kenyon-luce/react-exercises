@@ -5,7 +5,8 @@ import Home from './components/Home';
 import {GlobalStyle} from './GlobalStyle'
 //^^here, we imported a global version of the line above it, allowing us to call on and use this styling outside of App.js
 
-//Components
+//Routing
+import {BrowserRouter as Router, Routes, Route} from 'react-router'
 
 function App() {
   return (
