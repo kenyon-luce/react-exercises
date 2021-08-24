@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 //importing placeholder elements
 //LOGOS
@@ -11,7 +12,10 @@ import {Wrapper, Content, LogoImg, TMDBLogoImg, CreditLogo} from './Header.style
 const Header = () => (
     <Wrapper>
         <Content>
-            <LogoImg src={RMDBLogo} alt='rmdb-logo'/>
+            <Link to='/'>
+                <LogoImg src={RMDBLogo} alt='rmdb-logo'/>
+            </Link>
+            {/*^^the above logo now works as a link when clicked*/}
             <CreditLogo src={TMDBLogo} alt='tmdb-logo'/>
         </Content>
     </Wrapper>
