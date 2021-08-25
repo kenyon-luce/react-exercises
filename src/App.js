@@ -1,7 +1,7 @@
 import React from 'react';
 
 //Routing
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 //Components
 import Header from './components/Header';
@@ -19,16 +19,19 @@ const App = () => (
         {/*    <Route path='/' element={<Home/>}/>*/}
         {/*    <Route path='/:movieId' element={<Movie/>}/>*/}
         {/*</Routes>*/}
-        {/*^^since importing Routes isn't working, I will just do each individual Route*/}
-        <Route path='/'>
-            <Home/>
-        </Route>
-        <Route path='/:movie'>
-            <Movie/>
-        </Route>
-        <Route path='/*'>
-            <NotFound/>
-        </Route>
+        {/*^^since Routes cannot be used in my case, I will use Switch instead*/}
+        <Switch>
+            <Route exact path='/'>
+                <Home/>
+            </Route>
+            <Route exact path='/:movie'>
+                <Movie/>
+            </Route>
+            <Route>
+                <NotFound/>
+            </Route>
+        </Switch>
+
         <GlobalStyle/>
     </Router>
 );
