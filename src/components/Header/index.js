@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import RMDBLogo from '../../images/react-movie-logo.svg';
 import TMDBLogo from '../../images/tmdb_logo.svg';
 //STYLES
-import {Wrapper, Content, LogoImg, TMDBLogoImg, CreditLogo} from './Header.styles';
+import {Wrapper, Content, LogoImg, CreditLogo} from './Header.styles';
 //the "{}" lets us import more than one element from the same component
 
 const Header = () => (
