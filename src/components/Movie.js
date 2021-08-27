@@ -11,14 +11,13 @@ const Movie = () => { //using brackets because we want to include logic for fetc
 
     const {state: movie, loading, error} = useMovieFetch(movieId);
     //you can change the name of a property using ':'
-    console.log(movie);
+    console.log(movieId);
     return (
         //fragment hehehe
         <>
             <div>Movie</div>
         </>
     )
-
 }
 
 export default Movie;

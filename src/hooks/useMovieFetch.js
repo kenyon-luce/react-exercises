@@ -7,7 +7,7 @@ export const useMovieFetch = movieId => {
     const [error, setError] = useState({});
 
     useEffect(() => {
-        const fetchMovie = async() => {
+        const fetchMovie = async () => {
             try {
                 setLoading(true);
                 setError(false);
