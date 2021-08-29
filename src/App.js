@@ -1,7 +1,8 @@
 import React from 'react';
 
 //Routing
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, /*Switch,*/ Route} from "react-router-dom";
+import {Routes} from "react-router";
 
 //Components
 import Header from './components/Header';
@@ -20,7 +21,7 @@ const App = () => (
         {/*    <Route path='/:movieId' element={<Movie/>}/>*/}
         {/*</Routes>*/}
         {/*^^since Routes cannot be used in my case, I will use Switch instead*/}
-        <Switch>
+        <Routes>
             <Route exact path='/'>
                 <Home/>
             </Route>
@@ -30,7 +31,7 @@ const App = () => (
             <Route>
                 <NotFound/>
             </Route>
-        </Switch>
+        </Routes>
 
         <GlobalStyle/>
     </Router>

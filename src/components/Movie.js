@@ -13,7 +13,6 @@ const Movie = () => { //using brackets because we want to include logic for fetc
     //you can change the name of a property using ':'
     console.log(movieId);
     return (
-        //fragment hehehe
         <>
             <div>Movie</div>
         </>
