@@ -19,6 +19,7 @@ const Movie = () => { //using brackets because we want to include logic for fetc
         <>
             {/*<div>Movie</div>*/}
             <BreadCrumb movieTitle={movie.original_title}/>
+        {/*    ^^just a small note, the original_title property was not being called on because in my fetch hook I called on the plural version of the function, which was retrieving a list of movies rather than the info for a singular one, this issue was fixed after an hour by removing the 's' :D */}
         </>
     )
 }
