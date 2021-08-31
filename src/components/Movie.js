@@ -7,7 +7,7 @@ import NoImage from '../images/no_image.jpg';
 import {useMovieFetch} from "../hooks/useMovieFetch";
 import BreadCrumb from "./BreadCrumb";
 import MovieInfo from "./MovieInfo";
-import MovieInfoBar from "./MovieInfoBar/MovieInfoBar.styles";
+import MovieInfoBar from "./MovieInfoBar";
 
 const Movie = () => { //using brackets because we want to include logic for fetching info from the API
     const {movieId} = useParams(); //gives us the id of the movie so we can get info for that soecific movie
