@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper} from './Actor/Actor.styles';
+import { Wrapper, Image} from './Actor.styles';
 
 const Actor = ({name, character, imageUrl}) => (
     <Wrapper>
