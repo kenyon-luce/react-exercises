@@ -18,7 +18,7 @@ const Movie = () => { //using brackets because we want to include logic for fetc
     if (loading) return <Spinner/>;
     if (error) return <div>Something went wrong...</div>;
 
-    console.log(movie.actors)
+    console.log(movie.actors[0].name)
     return (
         <>
             {/*<div>Movie</div>*/}
@@ -27,17 +27,18 @@ const Movie = () => { //using brackets because we want to include logic for fetc
             <MovieInfo movie={movie}/>
             <MovieInfoBar time={movie.runtime} budget={movie.budget} revenue={movie.revenue}/>
             <Grid header='Actors'>
-                {/* {movie.actors.map(actor => (
+                {movie.actors.map(actor => (
                     <Actor
-                        key={actor.character}
+                        key={actor.credit_id}
                         name={actor.name}
                         character={actor.character}
                         imageUrl={
                             actor.profile_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
                             : NoImage
                         }
-                    />
-                ))} */}
+                    /> 
+                ))}
+
             </Grid>
         </>
     )
