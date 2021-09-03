@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import {API_KEY, IMAGE_BASE_URL, POSTER_SIZE} from "../config";
 import Grid from './Grid';
 import Spinner from './Spinner';
-import NoImage from '../images/no_image.jpg';
+import DefaultImage from '../images/no_image.jpg';
 import {useMovieFetch} from "../hooks/useMovieFetch";
 import BreadCrumb from "./BreadCrumb";
 import MovieInfo from "./MovieInfo";
@@ -18,7 +18,6 @@ const Movie = () => { //using brackets because we want to include logic for fetc
     if (loading) return <Spinner/>;
     if (error) return <div>Something went wrong...</div>;
 
-    console.log(movie.actors[0].name)
     return (
         <>
             {/*<div>Movie</div>*/}
@@ -34,7 +33,7 @@ const Movie = () => { //using brackets because we want to include logic for fetc
                         character={actor.character}
                         imageUrl={
                             actor.profile_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}`
-                            : NoImage
+                            : DefaultImage
                         }
                     /> 
                 ))}
