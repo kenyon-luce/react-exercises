@@ -3,13 +3,16 @@ import React, {useState} from 'react';
 
 //Components
 // const Star = () => React.createElement('div', null, 'This is a little star');
-
+import Board from "./components/Board"
 
 function App() {
   return (
-    <div className="App">
-      Start here.
-    </div>
+    <>
+      <div className="App">
+        Start here.
+      </div>
+      <Board/>
+    </>
   );
 }
 
