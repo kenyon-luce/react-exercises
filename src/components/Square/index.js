@@ -1,4 +1,9 @@
-import React from "react";
-import {Square} from './Square.styles';
+import {Wrapper} from './Square.styles';
+
+const Square = () => {
+    return (
+        <Wrapper/>
+    )
+}
 
 export default Square;

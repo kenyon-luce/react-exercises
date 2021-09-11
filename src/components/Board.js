@@ -8,8 +8,6 @@ const Board = () => {
           <Square/><Square/><Square/>
         </>
     )
-        
-    
 }
 
 export default Board;

@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 // import styled from 'styled-components'
 
 //Components
-// const Star = () => React.createElement('div', null, 'This is a little star');
 import Board from "./components/Board"
+import {Square} from "./components/Square";
 
 function App() {
   return (

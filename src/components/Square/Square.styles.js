@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Square = styled.div`
+export const Wrapper = styled.div`
         background: #fff;
         border: 1px solid #999;
         float: left;
