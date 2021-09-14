@@ -30,18 +30,18 @@ padding: 0 20px;
 `;
 
 const Square = styled.div`
-// background: #fff;
-        border: 1px solid #999;
-//         // float: left;
-//         font-size: 24px;
-//         font-weight: bold;
-//         line-height: 34px;
-//         height: 34px;
-//         // margin-right: -1px;
-//         // margin-top: -1px;
-//         padding: 0;
-//         // text-align: center;
-//         width: 34px;
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 34px;
     display: grid;
     //fragments?
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); //each column is 200px and it fits as many columns as it can depending on the page width
