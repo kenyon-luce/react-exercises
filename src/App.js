@@ -24,9 +24,10 @@ import styled from 'styled-components'
 // `;
 
 const Grid = styled.div`
-max-width: var(--maxWidth);
-margin: 0 auto;
-padding: 0 20px;
+// max-width: var(--maxWidth);
+// margin: 0 auto;
+// padding: 0 20px;
+  display: flex
 `;
 
 const Square = styled.div`
@@ -50,6 +51,12 @@ const Square = styled.div`
 
 const Board = () => (
   <Grid>
+    <Square/>
+    <Square/>
+    <Square/>
+    <Square/>
+    <Square/>
+    <Square/>
     <Square/>
   </Grid>
 )
